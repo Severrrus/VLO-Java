@@ -8,14 +8,14 @@
  */
 public class Sort {
 	// Swap
-	public static void swap(int[] tab, int a, int b)
+	private void swap(int[] tab, int a, int b)
 	{
 		int temp = tab[b];
 		tab[b] = tab[a];
 		tab[a] = temp;
 	}
 	//Bubble sort
-	public static void Bubble(int[] tab)
+	public void Bubble(int[] tab)
 	{
 		for(int i = 0; i < tab.length-1; i++)
 			for(int j = 0; j < tab.length-i-1; j++)
@@ -24,7 +24,7 @@ public class Sort {
 		
 	}
 	//MergeSort
-	public static void MergeSort(int[] tab, int p, int q)
+	public void MergeSort(int[] tab, int p, int q)
 	{
 		if(p == q) return;
 		int s = (p+q)/2;
@@ -33,7 +33,7 @@ public class Sort {
 		Merge(tab, p, q);
 	}
 	//Merge for MergeSort
-	public static void Merge(int[] tab, int p, int q)
+	public void Merge(int[] tab, int p, int q)
 	{
 		int[] tab2 = new int [q-p+1];
 		int s = (p+q)/2;
@@ -67,7 +67,7 @@ public class Sort {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public void main(String[] args) {
 		int[] tab = {3,5,2,10,7,4,3,41,2,30};
 		Bubble(tab);
 		//MergeSort(tab, 0, tab.length - 1);
