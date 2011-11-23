@@ -12,16 +12,18 @@ public class sortowanie {
 	 * 
 	 * 
 	 */
+	public static void swap(int[] tab, int a, int b)
+	{
+		int temp = tab[b];
+		tab[b] = tab[a];
+		tab[a] = temp;
+	}
 	public static void Bubble(int[] tab)
 	{
 		for(int i = 0; i < tab.length-1; i++)
 			for(int j = 0; j < tab.length-i-1; j++)
 				if(tab[j+1] < tab[j])
-				{
-					int temp = tab[j+1];
-					tab[j+1] = tab[j];
-					tab[j] = temp;
-				}
+					swap(tab, j, j+1);
 		
 	}
 	public static void MergeSort(int[] tab, int p, int q)
@@ -68,7 +70,8 @@ public class sortowanie {
 	 */
 	public static void main(String[] args) {
 		int[] tab = {3,5,2,10,7,4,3,41,2,30};
-		MergeSort(tab, 0, tab.length - 1);
+		Bubble(tab);
+		//MergeSort(tab, 0, tab.length - 1);
 		for(int i = 0; i < tab.length; i++)
 		{
 			System.out.print(tab[i]);
