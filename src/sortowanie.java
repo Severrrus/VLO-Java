@@ -34,7 +34,7 @@ public class sortowanie {
 	}
 	public static void Merge(int[] tab, int p, int q)
 	{
-		int[] tab2 =new int [q-p+1];
+		int[] tab2 = new int [q-p+1];
 		int s = (p+q)/2;
 		int i = p, j = s+1, k = 0;
 		while(i <= s && j <= q)
@@ -68,7 +68,7 @@ public class sortowanie {
 	 */
 	public static void main(String[] args) {
 		int[] tab = {3,5,2,10,7,4,3,41,2,30};
-		MergeSort(tab, 0, tab.length);
+		MergeSort(tab, 0, tab.length - 1);
 		for(int i = 0; i < tab.length; i++)
 		{
 			System.out.print(tab[i]);
