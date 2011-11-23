@@ -15,7 +15,7 @@ public class Sort {
 		tab[a] = temp;
 	}
 	//Bubble sort
-	public void Bubble(int[] tab)
+	public void bubble(int[] tab)
 	{
 		for(int i = 0; i < tab.length-1; i++)
 			for(int j = 0; j < tab.length-i-1; j++)
@@ -67,9 +67,10 @@ public class Sort {
 	/**
 	 * @param args
 	 */
-	public void main(String[] args) {
+	public static void main(String[] args) {
+		Sort sort = new Sort();
 		int[] tab = {3,5,2,10,7,4,3,41,2,30};
-		Bubble(tab);
+		sort.bubble(tab);
 		//MergeSort(tab, 0, tab.length - 1);
 		for(int i = 0; i < tab.length; i++)
 		{
