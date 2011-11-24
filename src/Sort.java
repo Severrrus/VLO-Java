@@ -14,6 +14,11 @@ public class Sort {
 		tab[b] = tab[a];
 		tab[a] = temp;
 	}
+	//Quick Sort
+	public static void QuickSort(int[]tab, int p, int q)
+	{
+		
+	}
 	//Bubble sort
 	public static void bubble(int[] tab)
 	{
