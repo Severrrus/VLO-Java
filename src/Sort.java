@@ -6,39 +6,73 @@
  * @author Severrrus
  *
  */
+//import java.util.Random;
+
 public class Sort {
-	// Swap
-	private static void swap(int[] tab, int a, int b)
+
+	private int [] tab;
+	//private Random rand;
+
+	public Sort(int[] tab)
+	{
+		this.tab= tab;
+		//this.rand = new Random();
+	}
+	//Swap
+	private void swap(int a, int b)
 	{
 		int temp = tab[b];
 		tab[b] = tab[a];
 		tab[a] = temp;
 	}
 	//Quick Sort
-	public static void QuickSort(int[]tab, int p, int q)
+	private int Partition(int p, int q)
 	{
-		
+		int left = p;
+		int right = q;
+		int pivot = tab[(left+right)/2]; // TU POWINNA BYC LOSOWA ALE NIE PYKALA
+		while(left <= right)
+		{
+			while(tab[left] < pivot)
+				left++;
+			while(tab[right] > pivot)
+				right++;
+			if(left <=right)
+			{
+				swap(left, right);
+				left++; right++;
+			}
+		}
+		return left;		
+	}
+	public void QuickSort(int p, int q)
+	{
+		int cos = Partition(p, q);
+		if (p < cos - 1)
+	            QuickSort(p, cos - 1);
+	    if (cos < q)
+	            QuickSort(cos, q);
 	}
 	//Bubble sort
-	public static void bubble(int[] tab)
+	public void bubble()
 	{
 		for(int i = 0; i < tab.length-1; i++)
 			for(int j = 0; j < tab.length-i-1; j++)
 				if(tab[j+1] < tab[j])
-					swap(tab, j, j+1);
+					swap(j, j+1);
 		
 	}
 	//MergeSort
-	public static void MergeSort(int[] tab, int p, int q)
+	public void MergeSort(int p, int q)
 	{
 		if(p == q) return;
 		int s = (p+q)/2;
-		MergeSort(tab, p, s);
-		MergeSort(tab, s+1,q);
-		Merge(tab, p, q);
+		MergeSort(p, s);
+		MergeSort(s+1,q);
+		Merge(p, q);
 	}
 	//Merge for MergeSort
-	public static void Merge(int[] tab, int p, int q)
+	public void Merge(int p, int q)
 	{
 		int[] tab2 = new int [q-p+1];
 		int s = (p+q)/2;
@@ -74,13 +108,15 @@ public class Sort {
 	 */
 	public static void main(String[] args) {
 		int[] tab = {3,5,2,10,7,4,3,41,2,30};
-		MergeSort(tab,0, tab.length-1);
-		//MergeSort(tab, 0, tab.length - 1);
+		Sort array = new Sort(tab);
+		array.QuickSort(0, 9);
+		//array.MergeSort(0, 9);
 		for(int i = 0; i < tab.length; i++)
 		{
 			System.out.print(tab[i]);
 			System.out.print(" ");
 		}
+	
 
 	}
 
