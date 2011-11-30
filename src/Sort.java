@@ -1,8 +1,4 @@
 /**
- * 
- */
-
-/**
  * @author Severrrus
  *
  */
@@ -70,8 +66,8 @@ public class Sort {
 	public static void main(String[] args) {
 		Sort sort = new Sort();
 		int[] tab = {3,5,2,10,7,4,3,41,2,30};
-		sort.bubble(tab);
-		//MergeSort(tab, 0, tab.length - 1);
+		//sort.bubble(tab);
+		sort.MergeSort(tab, 0, tab.length -1);
 		for(int i = 0; i < tab.length; i++)
 		{
 			System.out.print(tab[i]);
