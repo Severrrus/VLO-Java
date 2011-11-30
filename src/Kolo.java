@@ -6,14 +6,19 @@
  * @author Severus
  *
  */
-public class Kolo {
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+public class Kolo extends Figura
+	{
+	private Punkt o;
+	private double r;
+	Kolo(Punkt o, double r)
+	{
+		this.o = o;
+		this.r = r;
+	}
+	@Override
+	public void rysuj() 
+	{
+		System.out.println("Rysujemy kolo w srodku " + o + " i  promieniu r = " + r);		
 	}
 
 }
