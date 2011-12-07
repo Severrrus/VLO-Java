@@ -24,5 +24,16 @@ public class Kolo extends Figura implements Comparable<Kolo>
 	public int compareTo(Kolo o) {
 		return (int)(o.r - r);
 	}
-
+	public Punkt getO() {
+		return o;
+	}
+	public void setO(Punkt o) {
+		this.o = o;
+	}
+	public double getR() {
+		return r;
+	}
+	public void setR(double r) {
+		this.r = r;
+	}
 }
