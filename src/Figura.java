@@ -11,7 +11,8 @@ public abstract class Figura {
 		a.rysuj();
 		a = new Prostokat(new Punkt(-1d, -1d), new Punkt(5d, 3d));
 		a.rysuj();
-		a = new Kwadrat(new Punkt(-1d, -1d), new Punkt(-2d,-1d));
+		a = new Kwadrat(new Punkt(-1d, -1d), new Punkt(-1d,-1d));
+		((Kwadrat)a).setA(new Punkt(-3d, -3d));
 	}
 
 }

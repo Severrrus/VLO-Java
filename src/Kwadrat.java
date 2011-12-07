@@ -26,6 +26,10 @@ public class Kwadrat extends Prostokat
 			throw new IllegalArgumentException("Kwadrat musi miec rowne boki");	
 		super.setB(b);
 	}
+	/*@Override
+	public void rysuj() {
+		System.out.println("Rysuje kwadrat o wierzcholkach " + getA() + " i " + getB());
+	}
 
 
 }
